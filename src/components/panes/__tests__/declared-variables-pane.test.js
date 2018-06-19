@@ -41,12 +41,12 @@ describe('DeclaredVariablesPaneUnconnected React component', () => {
     expect(declaredVariablesPane().find(SidePane).length).toBe(1)
   })
 
-  it("sets the HistoryPane's openOnMode prop to be history", () => {
+  it("sets the DeclaredVariablesPane's openOnMode prop to be declared variables", () => {
     expect(declaredVariablesPane().find(SidePane).props().openOnMode)
       .toBe('declared variables')
   })
 
-  it("sets the HistoryPane's task prop to be toggleHistoryPane", () => {
+  it("sets the DeclaredVariablesPane's task prop to be toggleDeclaredVariablesPane", () => {
     expect(declaredVariablesPane().find(SidePane).props().task)
       .toBe(tasks.toggleDeclaredVariablesPane)
   })
