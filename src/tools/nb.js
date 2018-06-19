@@ -21,11 +21,14 @@ nb.any = function(arr){
 //   } else {return false}
 // }
 
+// UNUSED
 nb.isMatrixLike = function(obj){
   if (nb.isArray(obj)){
     return nb.all(obj.map(nb.isArray))
   } else {return false}
 }
+
+// arrayEqual, sameKeys, isrowDF, shape, isColumnDf, 
 
 nb.arrayEqual = function(a1,a2){
   if (a1.length != a2.length){return false}
@@ -76,7 +79,8 @@ nb.nanComparison = function(a,b){
   if (!isNaN(a-b)) {return a<b ? -1 : 1} //use numeric sort
   else {return isNaN(a) ? 1:-1}  // if a is nan, sort it *after* b
 }
-  
+ 
+// unused
 nb.rank = function(arr) {
   let rank = 1
   let rankMapping = {}
@@ -91,7 +95,7 @@ nb.rank = function(arr) {
     })
   return arr.map(item => isNaN(item) ? NaN : rankMapping[item] )
 }
-
+// UNUSED
 nb.toColumns = function(rowDF){
   let cols = _.keys(rowDF[0])
   let columnar = {}
@@ -101,7 +105,7 @@ nb.toColumns = function(rowDF){
   }
   return columnar
 }
-
+// UNUSED
 nb.toRows = function(colDf){
   let cols = Object.keys(colDf)
   return colDf[cols[0]].map
@@ -120,11 +124,11 @@ nb.shape = function(obj){
     return [undefined,undefined]
   } 
 }
-
+//
 nb.dropRowsWithNaN = function(col1,col2){
   return _.unzip( _.zip(col1,col2).filter(xy => !(_.isNaN(xy[0]) || _.isNaN(xy[1]))) )
 }
-
+// NEEDS TESTS
 nb.prettyFormatNumber = function(x,numChars=8){
   numChars = numChars<=4 ? 4 : numChars
   if(!_.isNumber(x)){return x}
@@ -141,7 +145,7 @@ nb.prettyFormatNumber = function(x,numChars=8){
     return x.toFixed(Math.max(0, numChars-intStr.length-2))
   }
 }
-
+//unused
 nb.cartesianProduct = function(a1,a2){
   let out = []
   for (let x of a1){
