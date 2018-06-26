@@ -12,7 +12,8 @@ export default class UserButton extends React.Component {
   }
 
   render() {
-    if (!this.props.isAuthenticated) {
+    console.log(this.props);
+    if (this.props.isAuthenticated) {
       return (
         <NotebookTaskButton task={tasks.logoutGithub}>
           <img src={this.props.avatar} alt="" className="user-avatar" />
